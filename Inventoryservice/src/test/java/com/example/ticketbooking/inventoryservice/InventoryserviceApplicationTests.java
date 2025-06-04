@@ -1,4 +1,4 @@
-package com.example.ticketbooking.Inventoryservice;
+package com.example.ticketbooking.inventoryservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

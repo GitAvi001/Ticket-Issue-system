@@ -1,4 +1,4 @@
-package com.example.ticketbooking.Inventoryservice;
+package com.example.ticketbooking.inventoryservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
