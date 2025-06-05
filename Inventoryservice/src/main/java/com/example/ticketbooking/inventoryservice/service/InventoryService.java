@@ -6,13 +6,17 @@ import com.example.ticketbooking.inventoryservice.repository.EventRepository;
 import com.example.ticketbooking.inventoryservice.repository.VenueRepository;
 import com.example.ticketbooking.inventoryservice.response.EventInventoryResponse;
 import com.example.ticketbooking.inventoryservice.response.VenueInventoryResponse;
+import lombok.Builder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
+@Builder
 @Service
+@Slf4j
 public class InventoryService {
 
     //Event and Venue tables needed to map so two distinct repositories needed
@@ -24,7 +28,6 @@ public class InventoryService {
         this.eventRepository = eventRepository;
         this.venueRepository = venueRepository;
     }
-
     public List<EventInventoryResponse> getAllEvents() {
         final List<Event> events = eventRepository.findAll();
 
@@ -37,12 +40,12 @@ public class InventoryService {
 
     public VenueInventoryResponse getVenueInformation(final Long venueId) {
         final Venue venue = venueRepository.findById(venueId).orElse(null);
-
         return VenueInventoryResponse.builder()
                 .venueId(venue.getId())
                 .venueName(venue.getName())
                 .totalCapacity(venue.getTotalCapacity())
                 .build();
     }
+
 
 }

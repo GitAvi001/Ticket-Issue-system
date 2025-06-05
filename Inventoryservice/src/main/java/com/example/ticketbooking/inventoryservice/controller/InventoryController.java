@@ -4,6 +4,8 @@ import com.example.ticketbooking.inventoryservice.response.EventInventoryRespons
 import com.example.ticketbooking.inventoryservice.response.VenueInventoryResponse;
 import com.example.ticketbooking.inventoryservice.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,5 +28,6 @@ public class InventoryController {
     @GetMapping("/inventory/venue/{venueId}")
     public @ResponseBody VenueInventoryResponse inventoryByVenueId(@PathVariable("venueId") Long venueId) {
         return inventoryService.getVenueInformation(venueId);
+
     }
 }

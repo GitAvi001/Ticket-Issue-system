@@ -1,5 +1,5 @@
 package com.example.ticketbooking.inventoryservice.response;
-
+import com.example.ticketbooking.inventoryservice.entity.Event;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
