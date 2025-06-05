@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 
 @Entity
 @Getter
@@ -31,5 +33,8 @@ public class Event {
     @ManyToOne //Multiple events can have same movie theater
     @JoinColumn(name = "venue_id") //Foreign key exists for event table for map to venue table's id
     private Venue venue;
+
+    @Column(name="ticket_price")
+    private BigDecimal ticketPrice;
 
 }
