@@ -13,6 +13,7 @@ import org.springframework.web.servlet.function.ServerResponse;
 
 import java.net.URI;
 
+import static org.springframework.cloud.gateway.server.mvc.filter.FilterFunctions.setPath;
 import static org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions.route;
 
 @Configuration
@@ -33,6 +34,15 @@ public class BookingServiceRoutes {
                 .POST("/fallbackRoute",
                         request -> ServerResponse.status(HttpStatus.SERVICE_UNAVAILABLE)
                                 .body("Booking service is down"))
+                .build();
+    }
+
+    @Bean
+    public RouterFunction<ServerResponse> bookingServiceApiDocs() {
+        return GatewayRouterFunctions.route("booking-service-api-docs")
+                .route(RequestPredicates.path("/docs/bookingservice/v3/api-docs"),
+                        HandlerFunctions.http("http://localhost:8081"))
+                .filter(setPath("/v3/api-docs"))
                 .build();
     }
 
