@@ -8,10 +8,7 @@ import com.ticketbooking.bookingservice.response.BookingResponse;
 import com.ticketbooking.bookingservice.response.InventoryResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
 
 @Service
 @Slf4j
@@ -27,7 +24,6 @@ public class BookingService {
         this.inventoryServiceClient = inventoryServiceClient;
     }
 
-
     //return a BookingResponse object
     public BookingResponse createBooking(final BookingRequest request){
 
@@ -38,10 +34,10 @@ public class BookingService {
         return BookingResponse.builder().build();
     }
 
+    // check if there is enough inventory
     final InventoryResponse inventoryResponse = inventoryServiceClient.getInventory(request.getEventId());
-        log.info("Inventory Response: {}", inventoryResponse);
-        if (inventoryResponse.getCapacity() < request.getTicketCount()) {
+    log.info("Inventory Response: {}", inventoryResponse);
+    if (inventoryResponse.getCapacity() < request.getTicketCount()) {
         throw new RuntimeException("Not enough inventory");
     }
-
 }
