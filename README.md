@@ -16,7 +16,7 @@ This system follows a microservices architecture pattern with the following core
 5. Authentication: Secured with Keycloak for OAuth2 authentication.
 6. Database: MySQL for persistent data storage.
 
-🎯 Core Functionalities
+## 🎯 Core Functionalities
 
 1. Event Management: Create and manage musical events
 2. Ticket Booking: Real-time seat selection and booking
@@ -24,7 +24,7 @@ This system follows a microservices architecture pattern with the following core
 4. Order Processing: Complete order lifecycle management
 5. User Authentication: Secure user registration and login
 
-🛠️ Technologies
+## 🛠️ Technologies
 
 1. Backend framework: Spring Boot 3.5.0
 2. Language: Java 21
@@ -36,7 +36,7 @@ This system follows a microservices architecture pattern with the following core
 8. Containerization: Docker
 9. API Documentation: OpenAPI specification 3.1.1
 
-💻 Steps
+## 💻 Getting started
 
 1. Clone repository: git clone https://github.com/GitAvi001/Ticket-Issue-system.git
 2. Navigate to the project directory: cd Ticket-Issue-system
@@ -50,7 +50,7 @@ This system follows a microservices architecture pattern with the following core
 10. Change to api gateway directory: cd ../api-gateway
 11. Run the api-gateway service: Apply a new configuration or simply click the run button
 
-📚 API Documentation
+## 📚 API Documentation
 1. Access the API documentation for inventory service: http://localhost:8080/swagger-ui/index.html
 2. Access the API documentation for order service: http://localhost:8090/swagger-ui/index.html
 
