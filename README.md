@@ -2,7 +2,7 @@
 A comprehensive microservices-based ticket booking platform backend built with Spring Boot for managing musical events, 
 inventory, and order processing.
 
-🏗️ Architecture Overview
+## 🏗️ Architecture Overview
 
 ![Musical event - diagram drawio](https://github.com/user-attachments/assets/8bb08b49-b04d-4479-a6e1-a14668e9a598)
 
