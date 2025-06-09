@@ -4,7 +4,8 @@ inventory, and order processing.
 
 🏗️ Architecture Overview
 
-![Musical event - diagram.drawio.png](..%2F..%2FDownloads%2FMusical%20event%20-%20diagram.drawio.png)
+![Musical event - diagram drawio](https://github.com/user-attachments/assets/8bb08b49-b04d-4479-a6e1-a14668e9a598)
+
 
 This system follows a microservices architecture pattern with the following core components:
 
